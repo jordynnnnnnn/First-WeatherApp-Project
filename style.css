@@ -50,17 +50,17 @@ main {
   padding: 30px 0;
 }
 
-.app-city {
-  margin: 0;
-  font-size: 38px;
-  line-height: 48px;
-}
-
 .app-details {
   font-size: 16px;
   color: rgba(0, 0, 0, 0.6);
   line-height: 24px;
   font-weight: 500;
+}
+
+.app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
 }
 
 .app-details strong {
@@ -77,19 +77,19 @@ main {
 }
 
 .app-icon {
-  font-size: 44px;
-  margin-top: 22px;
+  width: 88px;
+  height: 88px;
 }
 
 .app-temp {
   font-size: 88px;
+  line-height: 88px;
   font-weight: bold;
-  margin-left: 10px;
 }
 
 .app-unit {
+  margin-top: 6px;
   font-size: 28px;
-  margin-top: 16px;
 }
 
 footer {
