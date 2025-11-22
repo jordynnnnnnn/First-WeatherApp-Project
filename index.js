@@ -12,8 +12,8 @@ function refreshWeather(response) {
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
   conditionsElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = ` ${response.data.temperature.humidity}%`;
-  windSpeedElement.innerHTML = ` ${response.data.wind.speed} km/h`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
   tempElement.innerHTML = Math.round(temp);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="app-icon"/>`;
 }
@@ -21,7 +21,7 @@ function refreshWeather(response) {
 function formatDate(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let days = [
+  let dayNames = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -30,11 +30,13 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
-  let day = days[date.getDay()];
+
+  let day = dayNames[date.getDay()];
 
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -47,9 +49,9 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
-
   searchCity(searchInput.value);
 }
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
