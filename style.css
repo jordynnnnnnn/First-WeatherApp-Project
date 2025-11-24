@@ -3,10 +3,18 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
 }
 
 a {
   color: #f54d7e;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  font-family: "Quicksand", sans-serif;
+  color: #f2decb;
 }
 
 .container {
@@ -17,7 +25,7 @@ a {
 .weather-content {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px;
 }
 
 .search-form-input {
@@ -132,11 +140,9 @@ main {
   padding: 0 10px;
 }
 
-footer {
-  text-align: center;
-  font-size: 13px;
-  font-family: "Quicksand", sans-serif;
-  color: #f2decb;
+.footer-box {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .box {
@@ -152,4 +158,12 @@ footer {
 
 .weather-box {
   margin-bottom: 200px;
+}
+
+.forecast-box {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
