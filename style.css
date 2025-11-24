@@ -1,71 +1,70 @@
 body {
-  background-image: url("images/Pixel-MountainsRiverboat.jpg");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/176/130/original/Pixel-PinkSunset.jpg?1763966529");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 a {
-  color: #00796b;
-  text-decoration: none;
+  color: #f54d7e;
 }
 
 .container {
-  font-family: Arial, sans-serif;
   max-width: 600px;
   margin: 0 auto;
-}
-
-.box {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-}
-
-.search-box {
-  text-align: center;
-
 }
 
 .weather-content {
-  font-family: Arial, sans-serif;
   max-width: 600px;
   margin: 0 auto;
-  background-color: #ffffff;
   padding: 20px;
 }
 
-header {
-  border-bottom: 1px solid #ffffff;
-  padding: 0 0 30px 0;
+.search-form-input {
+  font-family: "Quicksand", sans-serif;
+  background-color: #916591;
+  border: none;
+  border-radius: 8px;
+  width: 70%;
+  font-size: 16px;
+  padding: 15px 20px;
 }
 
-.search-form-input {
-  width: 80%;
-  padding: 10px;
-  border: #00796b 2px solid;
-  border-radius: 8px;
-  font-size: 16px;
+.search-form-input::placeholder {
+  color: #f2decb;
 }
 
 .search-button {
+  font-family: "Quicksand", sans-serif;
+  background: #6f246f;
   padding: 14px 30px;
-  background-color: #00796b;
-  color: #ffffff;
   border: none;
-  border-radius: 8px;
   font-size: 16px;
+  margin-left: 5px;
+  border-radius: 6px;
+  color: #f2decb;
   cursor: pointer;
-}
-
-.search-button:hover {
-  background-color: #004d40;
 }
 
 main {
   padding: 30px 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+.search-button:hover {
+  background-color: #f54d7e;
+}
+
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-city {
+  margin: 0;
+  font-size: 38px;
+  line-height: 48px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .app-details {
@@ -75,19 +74,8 @@ main {
   font-weight: 500;
 }
 
-.app-city {
-  margin: 0;
-  font-size: 38px;
-  line-height: 48px;
-}
-
 .app-details strong {
-  color: #00796b;
-}
-
-.weather-data {
-  display: flex;
-  justify-content: space-between;
+  color: #6f246f;
 }
 
 .app-temp-container {
@@ -103,6 +91,7 @@ main {
   font-size: 88px;
   line-height: 88px;
   font-weight: bold;
+  color: #6f246f;
 }
 
 .app-unit {
@@ -118,7 +107,7 @@ main {
 
 .forecast-date {
   text-align: center;
-  color: rgba(39, 39, 39, 0.6);
+  color: #f2decb;
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 10px;
@@ -133,7 +122,7 @@ main {
 
 .forecast-temps {
   text-align: center;
-  color: #00796b;
+  color: #6f246f;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -146,8 +135,21 @@ main {
 footer {
   text-align: center;
   font-size: 13px;
-  color: rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
-  border-top: 1px solid #ffffff;
-  padding: 10px 0 0 0;
+  font-family: "Quicksand", sans-serif;
+  color: #f2decb;
+}
+
+.box {
+  background-color: rgba(245, 245, 245, 0.4);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  margin-top: 30px;
+}
+
+.weather-box {
+  margin-bottom: 200px;
 }
