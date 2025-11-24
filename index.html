@@ -8,6 +8,9 @@
     <title>⛈️Jordyn's Weather App⛈️</title>
 </head>
 <body>
+    <div class="container">
+
+    <div class="box search-box">
     <div class="weather-content">
     <header>
         <form class="search-form" id="search-form">
@@ -17,8 +20,11 @@
             class="search-form-input"/>
             <input type="submit" value="Search" class="search-button"/>
         </form>
+    </div>
+    </div>
     </header>
     <main>
+        <div class="box weather-box">
         <div class="weather-data">
         <div>
     <h1 class="app-city" id="app-city"></h1>
@@ -34,11 +40,17 @@
         <div class="app-unit">°C</div>
     </div>
     </div>
-    <div class="weather-forecast" id="forecast"></div>
+    </div>
+
+    <div class="box forecast-box">
+        <div class="weather-forecast" id="forecast"></div>
+    </div>
 </main>
-    <footer>🌻 Coded by 
-        <a href="https://github.com/jordynnnnnnn" target="_blank">Jordyn Pilcher</a>, is open-sourced on <a href="https://github.com/jordynnnnnnn/First-WeatherApp-Project" target="_blank">GitHub</a> and hosted on <a href="https://first-weather-app-project.vercel.app/">Vercel</a> 🌻
-    </footer>
+<div class="box footer-box">
+<footer>🌻 Coded by 
+    <a href="https://github.com/jordynnnnnnn" target="_blank">Jordyn Pilcher</a>, is open-sourced on <a href="https://github.com/jordynnnnnnn/First-WeatherApp-Project" target="_blank">GitHub</a> and hosted on <a href="https://first-weather-app-project.vercel.app/">Vercel</a> 🌻
+</footer>
+</div>
     <script src="index.js"></script>
 </body>
 </html>

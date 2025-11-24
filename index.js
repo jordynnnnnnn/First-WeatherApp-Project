@@ -16,6 +16,8 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
   tempElement.innerHTML = Math.round(temp);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="app-icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -52,22 +54,39 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function getForecast(city) {
+  let apiKey = "ca3401aa9fo6993fde3bf6t53aa16d30";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
   let forecastHTML = "";
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="forecast-day">
-    <div class="forecast-date">${day}</div> 
-    <div class="forecast-icon">⛅️</div> 
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="forecast-day">
+      <div class="forecast-date">${formatDay(day.time)}</div>
+
+    <img src="${day.condition.icon_url}" class="forecast-icon" />
     <div class="forecast-temps">
-    <div class="forecast-temp"><strong>21°</strong></div>
-    <div class="forecast-temp">14°</div>
+    <div class="forecast-temp"><strong>${Math.round(
+      day.temperature.maximum
+    )}°</strong></div>
+    <div class="forecast-temp">${Math.round(day.temperature.minimum)}°</div>
     </div>
     </div>
     `;
+    }
   });
 
   let forecastElement = document.querySelector("#forecast");
@@ -78,4 +97,4 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Adelaide");
-displayForecast();
+//displayForecast();
